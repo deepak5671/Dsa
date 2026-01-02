@@ -46,7 +46,7 @@ Explanation: The elevation map can trap 6 units of water.
 Time Complexity
 - O(n) → We traverse the array once using two pointers.
 Space Complexity
-- O(1) → Only a few variables (leftMax, rightMax, water) are used.
+- O(1) → Only a few variables (leftMax, rightMax, water) are used. 
 
  Key Insight
 - At each index, trapped water = min(maxLeft, maxRight) - height[i].
