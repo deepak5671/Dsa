@@ -1,0 +1,51 @@
+/*
+Problem Statement (0/1 Knapsack)
+You are given:
+- n items, each with a weight and a value.
+- A knapsack with a maximum capacity W.
+Goal:
+Select a subset of items such that:
+- The total weight ≤ W
+- The total value is maximized
+You cannot break items (0/1 choice: either take it or leave it).
+ */
+
+
+public class knapsack {
+    // Returns maximum value that can be put in a knapsack of capacity W
+    static int knapSack(int W, int wt[], int val[], int n) {
+        int[][] dp = new int[n + 1][W + 1];
+
+        // Build table dp[][] in bottom-up manner
+        for (int i = 0; i <= n; i++) {
+            for (int w = 0; w <= W; w++) {
+                if (i == 0 || w == 0) {
+                    dp[i][w] = 0;
+                } else if (wt[i - 1] <= w) {
+                    dp[i][w] = Math.max(val[i - 1] + dp[i - 1][w - wt[i - 1]],
+                                        dp[i - 1][w]);
+                } else {
+                    dp[i][w] = dp[i - 1][w];
+                }
+            }
+        }
+        return dp[n][W];
+    }
+
+    public static void main(String[] args) {
+        int val[] = {60, 100, 120};
+        int wt[] = {10, 20, 30};
+        int W = 50;
+        int n = val.length;
+        System.out.println("Maximum value in Knapsack = " + knapSack(W, wt, val, n));
+    }
+}
+/* 
+ Complexity Analysis
+- Time Complexity:
+- We fill an n × W DP table.
+- O(n\cdot W)
+- Space Complexity:
+- Using a 2D DP array → O(n\cdot W)
+*/
+
