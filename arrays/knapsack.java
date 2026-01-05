@@ -44,8 +44,9 @@ public class knapsack {
  Complexity Analysis
 - Time Complexity:
 - We fill an n × W DP table.
-- O(n\cdot W)
+- O(n*W)
 - Space Complexity:
-- Using a 2D DP array → O(n\cdot W)
+- Using a 2D DP array → O(n*W)
 */
+
 
