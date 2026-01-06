@@ -78,9 +78,8 @@ This is solved using Binary Search on the Answer:
  Time Complexity
 - Binary Search Range: from max(board) to sum(boards) → about O(log(sum))
 - Checking feasibility: O(n) for each mid
-- Total: O(n\cdot \log (\mathrm{sum\  of\  boards}))
+- Total: O(n*log(sum of boards))
 
 Space Complexity
 - Only a few variables used → O(1)
-
 */
