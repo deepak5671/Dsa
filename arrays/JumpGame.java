@@ -30,4 +30,12 @@ public class JumpGame {
         System.out.println(game.canJump(nums1)); // true
         System.out.println(game.canJump(nums2)); // false
     }
+
 }
+
+/*
+ Time Complexity
+- O(n) → We traverse the array once, updating the farthest reachable index.
+ Space Complexity
+- O(1) → Only a single variable reachable is used, no extra data structures
+*/
